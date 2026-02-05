@@ -37,9 +37,9 @@
 
 
 
-# demographic_keys = ["full_name", "date_of_birth", "address", "gender", "contact", "religion"]
+demographic_keys = ["full_name", "date_of_birth", "address", "gender", "contact", "religion"]
 
-# identity = {i:input(f"Enter your {i} \t") for i in demographic_keys}
+identity = {i:input(f"Enter your {i} \t") for i in demographic_keys}
 
 # # full_name
 # # date_of_birth
@@ -86,7 +86,6 @@
 
 # breakpoint()
 
-full_name = str()
+# full_name = str()
 
-
-breakpoint()
+# breakpoint()
