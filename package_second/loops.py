@@ -21,3 +21,12 @@ while (count < 5):
 # concatenate those chars to make full user name
 
 
+user_name = ""
+
+length_of_name = int(input("Enter the length of your name : \n"))
+
+for _ in range(length_of_name):
+    user_name = user_name + input("Enter next character in your name : \n")
+
+
+print(f"Finally your name is : => {user_name}")
