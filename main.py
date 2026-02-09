@@ -5,4 +5,5 @@
 # import package_second.loops
 
 # import package_second.conditionals
-import package_second.list_
+# import package_second.list_
+import package_second.dictionary
