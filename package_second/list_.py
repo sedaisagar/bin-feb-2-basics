@@ -53,38 +53,50 @@
 # Ask for name, marks, at least 4 students
 # make a pass list and fail list iterating over the items 
 
-[("Ram", 50, "Pass"),
-("Shyam", 40, "Fail")]
+# [("Ram", 50, "Pass"),
+# ("Shyam", 40, "Fail")]
 
-name, marks, result = ("Ram", 50, "Pass")
-
-
-name_list , marks_list = [], []
-for _ in range(4):
-    name_list.append(input("Enter Name \n"))
-    marks_list.append(float(input("Enter Marks \n")))
+# name, marks, result = ("Ram", 50, "Pass")
 
 
-result_list = []
-for name, marks in zip(name_list, marks_list):
-    result_list.append(
-        (
-            name,
-            marks,
-            "Pass" if marks >= 50 else "Fail"
-        )
-    )
+# name_list , marks_list = [], []
+# for _ in range(4):
+#     name_list.append(input("Enter Name \n"))
+#     marks_list.append(float(input("Enter Marks \n")))
 
-# print(result_list)
 
-# [("Ram", 50, "Pass")]
+# result_list = []
+# for name, marks in zip(name_list, marks_list):
+#     result_list.append(
+#         (
+#             name,
+#             marks,
+#             "Pass" if marks >= 50 else "Fail"
+#         )
+#     )
 
-passed_students = list(filter(lambda x: x[2] == "Pass", result_list))
-print(passed_students)
+# # print(result_list)
 
-passed_students.sort(key=lambda x : x[1], reverse=True) # In place sorting
+# # [("Ram", 50, "Pass")]
 
-# sorted() -> New Sorted Object -> List
-print(passed_students)
+# passed_students = list(filter(lambda x: x[2] == "Pass", result_list))
+# print(passed_students)
+
+# passed_students.sort(key=lambda x : x[1], reverse=True) # In place sorting
+
+# # sorted() -> New Sorted Object -> List
+# print(passed_students)
 
 # 
+
+
+list_of_persons = ["Ram", "Shyam", "Rita", "Love"]
+
+# for i in list_of_persons:
+#     i
+
+mod_list = [f"Person : {i}" for i in list_of_persons if "o" in i.lower()] # This is list comprehension with condition
+
+print(mod_list)
+
+

@@ -86,3 +86,21 @@ transformed_students = list(map(lambda x: (x["name"], x["age"], x["address"]), s
 
 print(transformed_students)
 
+
+
+# Nested Dictionary
+# {
+#     "person": {
+#         "name":"Ram",
+#         "age":"20",
+#     },
+#     "address":{
+#         "permanent_address":{
+#             "state":"Bagmati",
+#         },
+#         "temporary_address":{
+#             "zip":44600,"state":"Bagmati",
+#             "zip":44600,
+#         }
+#     }
+# }
