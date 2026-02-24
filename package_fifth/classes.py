@@ -166,70 +166,163 @@
 
 
 
-class BankAccount:
-    account_number, balance = 123456789, 50000
-    interest_earned = 0
-
-    def deposit(self, amount):
-            self.balance = self.balance + amount
-            return f"""
-                TOTAL BALANCE {self.balance} \n DEPOSIT AMT {amount}
-            """
-
-    def withdraw(self, amount):
-        if amount <= self.balance:
-            self.balance = self.balance - amount
-            return f"""
-                REMAINING BALANCE {self.balance} \n WITHDRAWL AMT {amount}
-            """
-
-    def get_balance(self):
-        return f"YOUR CURRENT BALANCE IS :: {self.balance}"
-
-
-class SavingsAccount(BankAccount):
-    ir = 5
-    def add_interest(self):
-        earned_interest = (self.balance * (5 /100))
-        self.balance += earned_interest
-        self.interest_earned += earned_interest
-
-        return f"""
-            INTEREST CALCULATED :: {earned_interest} \n
-            TOTAL INTEREST EARNED TILL NOW :: {self.interest_earned} \n
-            TOTAL BALANCE :: {self.balance}
-        """
-
-instance = SavingsAccount()
-while True:
-
-    welcome_msg = f"""
-    Welcome to the world bank. \n
-    What do you want to do with your bank account!
-    Choices: \n
-    d :: DEPOSIT
-    w :: WITHDRAW
-    g :: GET BALANCE
-    i :: ADD INTEREST
-    \n 
-    """
-    print(welcome_msg)
-
-    mode = input("Enter the mode \t")
-    output = ""
-    match mode:
-        case "d":
-            deposit_amt = float(input("Enter the amount to withdraw \t"))
-            output = instance.deposit(deposit_amt)
-        case "w":
-            withdrwal_amt = float(input("Enter the amount to withdraw \t"))
-            output = instance.withdraw(withdrwal_amt)
-        case "g":
-            output = instance.get_balance()
-        case "i":
-            output = instance.add_interest()
-        case _:
-            print(f"You provided illegal option {mode}")
-            break
+# class BankAccount:
+#     interest_earned = 0
     
-    print(output, "\n")
+#     def __init__(self,account_number, balance):
+#         self.account_number, self.balance = account_number, balance
+
+#     def deposit(self, amount):
+#             self.balance = self.balance + amount
+#             return f"""
+#                 TOTAL BALANCE {self.balance} \n DEPOSIT AMT {amount}
+#             """
+
+#     def withdraw(self, amount):
+#         if amount <= self.balance:
+#             self.balance = self.balance - amount
+#             return f"""
+#                 REMAINING BALANCE {self.balance} \n WITHDRAWL AMT {amount}
+#             """
+#         return f"""
+#         AVAILABLE BALACE :: {self.balance}
+#         INSUFFICIENT FUND :: UNABLE TO WITHDRAW {amount} 
+#         """
+
+#     def get_balance(self):
+#         return f"YOUR CURRENT BALANCE IS :: {self.balance}"
+
+#     @staticmethod
+#     def printer(text):
+#         print(text)
+
+#     @classmethod
+#     def cls_printer(cls, text):
+#         print(text)
+
+    
+# class SavingsAccount(BankAccount):
+#     ir = 5
+#     def add_interest(self):
+#         earned_interest = (self.balance * (5 /100))
+#         self.balance += earned_interest
+#         self.interest_earned += earned_interest
+
+#         return f"""
+#             INTEREST CALCULATED :: {earned_interest} \n
+#             TOTAL INTEREST EARNED TILL NOW :: {self.interest_earned} \n
+#             TOTAL BALANCE :: {self.balance}
+#         """
+
+# instance = SavingsAccount(12345678,50000)
+# welcome_msg = f"""
+# Welcome to the world bank. \n
+# What do you want to do with your bank account!
+# Choices: \n
+# d :: DEPOSIT
+# w :: WITHDRAW
+# g :: GET BALANCE
+# i :: ADD INTEREST
+# \n 
+# """
+# print(welcome_msg)
+
+# while True:
+
+
+#     mode = input("Enter the mode \t")
+#     output = ""
+    
+#     try:
+#         match mode:
+#             case "d":
+#                 ip_text = input("Enter the amount to deposit \t")
+#                 if ip_text.isnumeric():
+#                     deposit_amt = float()
+#                     output = instance.deposit(deposit_amt)
+#                 else:
+#                     output = f">>>>> Please provide valid number <<<< \n"
+#             case "w":
+#                 withdrwal_amt = float(input("Enter the amount to withdraw \t"))
+#                 output = instance.withdraw(withdrwal_amt)
+#             case "g":
+#                 output = instance.get_balance()
+#             case "i":
+#                 output = instance.add_interest()
+#             case _:
+#                 print(f"You provided illegal option {mode}")
+#                 break
+#     except Exception as e:
+#         output = e
+#     finally:
+#         fp = "I would run whatever the cause!"
+    
+#     # instance.printer(output) # Static method call
+#     # print(output, "\n")
+
+#     BankAccount.cls_printer(output)
+#     BankAccount.printer(fp)
+
+
+
+
+# class NameException(Exception): pass
+# class AgeException(Exception): pass
+# class BloodTypeException(Exception): pass
+# class InsuranceIdException(Exception): pass
+
+
+
+# class Patient:
+
+#     def __init__(self,name, age, blood_type, insurance_id):
+#         self.validate_name(name)
+#         self.validate_age(age)
+#         self.validate_blood_type(blood_type)
+#         self.validate_insurance_id(insurance_id)
+
+#     def validate_name(self, name):
+#         # check here
+#         # raise NameException("Name is not found to be valid!")
+#         pass
+
+#     def validate_age(self, age):
+#         # check here
+#         # raise AgeException("Age is not found to be valid!")
+#         pass
+    
+#     def validate_blood_type(self, blood_type):
+#         # raise BloodTypeException("Blood type is not found to be valid!")
+#         pass
+
+#     def validate_insurance_id(self, iid):
+#         raise InsuranceIdException("Insurance id is not found to be valid!")
+#         pass
+
+# try:
+#     instance = Patient("","","","")
+# except NameException as e:
+#     print("Name Exception>>>>>",e)
+# except AgeException as e:
+#     print("Age Exception>>>>>",e)
+# except BloodTypeException as e:
+#     print("Blood Type Exception>>>>>",e)
+# except Exception as e:
+#     print(e)
+
+
+
+
+
+# import json
+
+
+# og = {"name":"Love Kishor Bam"}
+
+# ops = json.dumps(og)
+
+# print(f"Stringified dict,  {ops}", type(ops))
+
+# cs = json.loads(ops)
+
+# print(f"Reloaded to dict>>>", cs, type(cs))
