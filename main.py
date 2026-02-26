@@ -18,4 +18,5 @@
 # import package_fifth.recursive_func
 # import package_sql.crud
 # import package_sql.pd_sql
-import package_sql.scrapper
+# import package_sql.scrapper
+import package_sql.ui

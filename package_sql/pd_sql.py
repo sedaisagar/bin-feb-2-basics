@@ -55,13 +55,13 @@ class SQLUtils:
             result = connection.execute(text(query))
             return result
 
-instance = SQLUtils()
+# instance = SQLUtils()
 
-instance.insert(instance.get_seed_data(), "dummy_table_1")
-data = instance.read_data()
+# instance.insert(instance.get_seed_data(), "dummy_table_1")
+# data = instance.read_data()
 
-for i in data:
-    title, description = i
-    print(f"Title :: >> {title}, Description :: >> {description}\n", "-"*50)
+# for i in data:
+#     title, description = i
+#     print(f"Title :: >> {title}, Description :: >> {description}\n", "-"*50)
 
 # pip install pandas sqlalchemy

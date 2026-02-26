@@ -41,10 +41,10 @@ class BsScraper:
    
 
 
-instance = BsScraper()
-instance.scrap_all()
+# instance = BsScraper()
+# instance.scrap_all()
 
-sql_util = SQLUtils()
-sql_util.insert(pd.DataFrame(instance.news_list), "sidhakura_news")
+# sql_util = SQLUtils()
+# sql_util.insert(pd.DataFrame(instance.news_list), "sidhakura_news")
 
-print(f"TOTAL NEWS SCRAPPED {len(instance.news_list)}")
+# print(f"TOTAL NEWS SCRAPPED {len(instance.news_list)}")
