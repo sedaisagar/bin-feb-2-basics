@@ -326,3 +326,23 @@
 # cs = json.loads(ops)
 
 # print(f"Reloaded to dict>>>", cs, type(cs))
+
+
+
+from abc import ABC, abstractmethod
+
+class Animal(ABC): # Inherit from ABC
+    @abstractmethod
+    def make_sound(self) -> str: ...
+    
+    # A concrete method that subclasses can inherit
+    def move(self):
+        print(f"{self.__class__.__name__} is moving")
+
+
+class Cow(Animal): 
+    def make_sound(self):
+        print("Gai Karayo!")
+
+instance = Cow()
+instance.make_sound()
